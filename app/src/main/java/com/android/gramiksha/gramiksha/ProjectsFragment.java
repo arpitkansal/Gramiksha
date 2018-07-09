@@ -2,17 +2,20 @@ package com.android.gramiksha.gramiksha;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.widget.ImageButton;
+import android.widget.ScrollView;
 
 
 /**
@@ -32,10 +35,6 @@ public class ProjectsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    WebView webView;
-    ProgressBar mProgress;
-
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,32 +66,18 @@ public class ProjectsFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
 
+
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_projects, container, false);
-        webView = (WebView)view.findViewById(R.id.webview_projects);
-        mProgress=view.findViewById(R.id.pbHeaderProgress);
-        mProgress.setVisibility(View.VISIBLE);
-        webView.setWebViewClient(new WebViewClient(){
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                    mProgress.setVisibility(View.INVISIBLE);
+        return inflater.inflate(R.layout.fragment_projects, container, false);
 
-                super.onPageFinished(view, url);
-            }
-        });
-
-
-        webView.loadUrl("https://gramiksha.in/projects");
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-                return view;
 
     }
 
@@ -134,4 +119,27 @@ public class ProjectsFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ImageButton mDown= view.findViewById(R.id.downArrow);
+        final ScrollView scrollView=view.findViewById(R.id.scrollView);
+        mDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
+        ImageButton mUp=view.findViewById(R.id.upArrow);
+        mUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scrollView.fullScroll(View.FOCUS_UP);
+            }
+        });
+    }
+
+
 }

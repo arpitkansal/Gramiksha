@@ -1,23 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectsFragment">
+    tools:context="com.android.gramiksha.gramiksha.ProjectsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/webview_projects"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
-    <ProgressBar
-        android:id="@+id/pbHeaderProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        style="?android:attr/progressBarStyleLarge"
-        android:visibility="visible"
+        android:id="@+id/scrollView"
+        android:scrollbarThumbVertical="@android:color/white"
+        android:scrollbarSize="2dp"
         >
-    </ProgressBar>
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:src="@drawable/udaan"
+            android:scaleType="centerCrop"
+            android:id="@+id/Udaan"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:background="#aa00000f"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="U D A A N"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="275dp"
+                android:textSize="50dp"
+                android:id="@+id/udaanText"
+                android:fontFamily="casual"
+                />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="#ffffff"
+            android:layout_below="@id/Udaan"
+            android:src="@drawable/seed"
+            android:scaleType="centerCrop"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:layout_below="@id/Udaan"
+                android:background="#aa00000f"
+                />
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/udaanText"
+                android:layout_marginTop="140dp"
+                android:background="@drawable/arroe"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/downArrow"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S E E D"
+                android:layout_below="@id/Udaan"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="275dp"
+                android:textSize="50dp"
+                android:id="@+id/seedText"
+                android:fontFamily="casual"
+                />
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/Udaan"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/uparrow"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/upArrow"
+
+
+                />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</FrameLayout>

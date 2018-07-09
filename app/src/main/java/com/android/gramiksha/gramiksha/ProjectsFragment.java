@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.Toolbar;
 
 
@@ -32,6 +34,7 @@ public class ProjectsFragment extends Fragment {
     private String mParam2;
 
     WebView webView;
+    ProgressBar mProgress;
 
 
     private OnFragmentInteractionListener mListener;
@@ -74,7 +77,18 @@ public class ProjectsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_projects, container, false);
         webView = (WebView)view.findViewById(R.id.webview_projects);
-        webView.setWebViewClient(new WebViewClient());
+        mProgress=view.findViewById(R.id.pbHeaderProgress);
+        mProgress.setVisibility(View.VISIBLE);
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                    mProgress.setVisibility(View.INVISIBLE);
+
+                super.onPageFinished(view, url);
+            }
+        });
+
+
         webView.loadUrl("https://gramiksha.in/projects");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

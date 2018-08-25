@@ -32,7 +32,7 @@ public class ContactUsFragment extends Fragment {
     public ContactUsFragment() {
         // Required empty public constructor
     }
-
+TextView email_bhopal,main_email,email_jaipur,email_indore,email_gwal,email_delhi,email_lxm;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -64,7 +64,100 @@ public class ContactUsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact_us, container, false);
+    View view= inflater.inflate(R.layout.fragment_contact_us, container, false);
+        
+        main_email=(TextView) view.findViewById(R.id.main_email);
+        email_bhopal=(TextView) view.findViewById(R.id.email_bhopal);
+        email_jaipur=(TextView) view.findViewById(R.id.email_jaipur);
+        email_delhi=(TextView) view.findViewById(R.id.email_delhi);
+        email_indore=(TextView) view.findViewById(R.id.email_indore);
+        email_gwal=(TextView) view.findViewById(R.id.email_gwal);
+        email_lxm=(TextView) view.findViewById(R.id.email_lxm);
+
+        main_email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"connect@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_bhopal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"bhopal@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Bhopal Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_indore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"indore@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Indore Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_delhi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"delhi@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Delhi Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_gwal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"gwalior@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Gwalior Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_lxm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"lxm@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Laxmangarh Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+
+        email_jaipur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("plain/test");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"jaipur@gramiksha.in"});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "FEEDBACK/QUERIES: Jaipur Gramiksha");
+                intent.putExtra(Intent.EXTRA_TEXT, "Your feedback and queries here...!!");
+                startActivity(intent);
+            }
+        });
+     return view;    
     }
 
     // TODO: Rename method, update argument and hook method into UI event

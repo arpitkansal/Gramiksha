@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#aeb9c0"
     tools:context=".ContactUsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="WE'D LOVE TO HEAR FROM YOU"
+        android:layout_marginTop="20dp"
+        android:textColor="#f26522"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact us at "
+            android:textSize="18sp"
+            android:textColor="#f26522"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" connect@gramiksha.in"
+
+            android:id="@+id/main_email"
+            android:textSize="18sp"
+            android:textColor="#1c5dac"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:text="JAIPUR\n\jaipur@gramiksha.in"
+        android:textColor="#fff"
+        android:id="@+id/email_jaipur"
+        android:background="@drawable/curve"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:inputType="textMultiLine"
+            android:text="INDORE\n\indore@gramiksha.in"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:id="@+id/email_indore"
+            android:background="@drawable/curve"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:padding="10dp"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="15dp"
+            android:textColor="#fff"
+            android:id="@+id/email_gwal"
+            android:text="GWALIOR\n\gwalior@gramiksha.in"
+            android:background="@drawable/curve"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:id="@+id/email_bhopal"
+            android:text="BHOPAL\n\bhopal@gramiksha.in"
+            android:background="@drawable/curve"/>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:layout_marginTop="15dp"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:text="DELHI\n\delhi@gramiksha.in"
+            android:id="@+id/email_delhi"
+            android:background="@drawable/curve"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:text="LAXMANGARH\n\lxm@gramiksha.in"
+            android:textColor="#fff"
+            android:id="@+id/email_lxm"
+            android:background="@drawable/curve"/>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
